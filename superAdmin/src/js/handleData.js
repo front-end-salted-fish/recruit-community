@@ -1,6 +1,6 @@
-import $ from 'jquery';
+import $ from '../../lib/jquery-1.12.4.min';
 const echarts = require('echarts');
-import {comfirmFlag, $comfirmFrame} from './comfirm';
+import {$comfirmFrame} from './comfirm';
 // 定义全局变量
 const $myPage = $('#zzl-page'); // 页面包裹元素
 const $breadcrumb = $('.breadcrumb li') // 路径导航条

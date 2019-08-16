@@ -1,8 +1,7 @@
-import $ from 'jquery';
+import $ from '../../lib/jquery-1.12.4.min';
 const $comfirmFrame = $('.alert ');
 const $closeComfirmFrameBtn = $('.alert .close');
 const $cancelBtn = $('.alert .cancel');
-let comfirmFlag = false;
 $closeComfirmFrameBtn.on('click', function() {
     $comfirmFrame.hide();
 });

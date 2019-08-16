@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "/Users/zarek/Documents/GitHub"
+		},
+		{
+			"path": "/Users/zarek/code/demo"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "GitHub"
+	}
+}

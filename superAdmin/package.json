@@ -25,7 +25,6 @@
   "dependencies": {
     "bootstrap-loader": "^3.0.4",
     "bootstrap-sass": "^3.4.1",
-    "echarts": "^4.2.1",
-    "jquery": "^1.12.4"
+    "echarts": "^4.2.1"
   }
 }

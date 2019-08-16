@@ -1,5 +1,4 @@
-import $ from 'jquery';
-// import handleData from './handleData';
+import $ from '../../lib/jquery-1.12.4.min';
 import '../../bootstrap-3.3.7-dist/css/bootstrap.min.css';
 import {$comfirmFrame} from './comfirm';
 import {allUrl, handleData, springNum} from "./handleData"
