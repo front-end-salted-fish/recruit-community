@@ -1,0 +1,365 @@
+.my-body > #zzl-page {
+    transition: color 1s, background-color 1s;
+    .container-fluid {
+        background: linear-gradient(45deg, #69667d, #938693, #4d4365);
+        transition: color 1s, background-color 1s;
+        #zzl-head {
+            .my-head {
+                color: #449D88;
+                font-size: 20px;
+                margin-top: 31px;
+            }
+            .menu {
+                font-size: 26px;
+                padding-top: 15px;
+                .menu-btn {
+                    float: left;
+                    margin-top: 10px;
+                    margin-right: 10px;
+                }
+                .breadcrumb {
+                    li {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .admin-img {
+                img {
+                    width: 15%;
+                    float: left;
+                    padding-top: 13px;
+                    padding-bottom: 8px;
+                }
+            }
+            .dropdown {
+                float: left;
+                padding-top: 12px;
+                padding-left: 2px;
+                .btn {
+                    border: none;
+                    font-size: 16px;
+                }
+            }
+            .skin {
+                margin: 10px 6px;
+                float: right;
+                .btn {
+                    padding: 6px 1px;
+                }
+            }
+            .breadcrumb {
+                padding: 0;
+                margin-bottom: 0;
+                list-style: none;
+                background-color: transparent;
+                border-radius: 4px;
+            }
+            // 实现列高度相同
+            &.row [class*="same-height"] {
+                margin-bottom: -899px;
+                padding-bottom: 899px;
+            }
+            &.row {
+                overflow: hidden;
+            }
+        }
+        #zzl-body {
+            .manage {
+                background: linear-gradient(45deg, #69667d, #938693, #4d4365);
+                transition: color 1s, background-color 1s;
+                scroll-behavior: smooth;
+                .check-all {
+                    label {
+                        margin-left: 24px;
+                    }
+                }
+            }
+            .my-list-wrap {
+                background: #1A2531;
+                a {
+                    border: none;
+                }
+                .list-group {
+                    .list-group-item {
+                        background: transparent;
+                        color: rgb(120, 117, 117);
+                        padding: 10px 10px 10px 12px;
+                        transition: color 1s, background-color 1s;
+                        &:first-child {
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                        }
+                        .badge {
+                            position: relative;
+                            background: rgba(225, 0, 0, .7);
+                            transition: color 1s, background-color 1s;
+                        }
+                        &.active {
+                            color: white;
+                            background: #449D88;
+                            transition: color 1s, background-color 1s;
+                            .glyphicon {
+                                color: white;
+                            }
+                            .badge {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            // 实现列高度相同
+            &.row [class*="same-height"] {
+
+                margin-bottom: -2899px;
+
+                padding-bottom: 2899px;
+
+            }
+            &.row {
+                overflow: hidden;
+            }
+            td {
+                vertical-align: middle;
+                text-align: center;
+                color: #fff;
+            }
+            #my-home {
+                background: linear-gradient(45deg, #69667d, #938693, #4d4365);
+                transition: color 1s, background-color 1s;
+                background-size: cover;
+                .home-datas {
+                    margin-top: 100px;
+                    .home-data {
+                        position: relative;
+                        float: left;
+                        width: 11.2vw;
+                        height: 100px;
+                        background: #449D88;
+                        margin: 0 1.2vw;
+                        color: white;
+                        overflow: hidden;
+                        cursor: pointer;
+                        border-radius: 5px 5px;
+                        box-shadow: #1A2531 0 0 2px;
+                        transition: color 1s, background-color 1s;
+                        &:nth-child(1) {
+                            background: #449D88;
+                            transition: color 1s, background-color 1s;
+                        }
+                        &:nth-child(2) {
+                            background: #406cb8;
+                            transition: color 1s, background-color 1s;
+                        }
+                        &:nth-child(3) {
+                            background: #c0444c;
+                            transition: color 1s, background-color 1s;
+                        }
+                        &:nth-child(4) {
+                            background: #4c4c4c;
+                            transition: color 1s, background-color 1s;
+                        }
+                        &:hover {
+                            box-shadow: #1A2531 1px 1px 5px;
+                        }
+                        .total {
+                            margin: 20px 0 0 45px;
+                            font-size: 16px;
+                            p {
+                                text-align: center;
+                            }
+                        }
+                        .glyphicon {
+                            position: absolute;
+                            top: 35%;
+                            left: 10%;
+                            font-size: 32px;
+                        }
+                    }
+                }
+                .sector {
+                    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565434857944&di=930881eb5496c19ed0cfdb427ed71e9c&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F03871d8582407ada84a0d304f71746f.jpg);
+                    transition: color 1s, background-color 1s;
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+                }
+            }
+            #banner-manage {
+                .img-zoom {
+                    position: fixed;
+                    z-index: 6;
+                    display: none;
+                }
+                .img-container {
+                    position: absolute;
+                    width: 80vw;
+                    background: #cecbcb;
+                    top: 1vh;
+                    left: 1vw;
+                    z-index: 1;
+                    height: 800px;
+                    display: none;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    transition: color 1s, background-color 1s;
+                    .close-img-container {
+                        opacity: .8;
+                        z-index: 2;
+                        position: absolute;
+                        right: 3vw;
+                    }
+                }
+                .mybtn {
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                    background: radial-gradient(#5ac0de, #7b7083);
+                    color: white;
+                    font-size: 16px;
+                    position: relative;
+                    float: right;
+                    text-align: center;
+                    overflow: hidden;
+                    margin: 20px 170px 10px 0;
+                    border-radius: 50% 50%;
+                    cursor: pointer;
+                    transition: color 1s, background-color 1s;
+                    .box {
+                        width: 4px;
+                        height: 4px;
+                        background: radial-gradient(red, black);
+                        position: absolute;
+                        border-radius: 50%;
+                        animation: mybtn 1s;
+                        opacity: 0;
+                        transform: scale(100);
+                        transition: color 1s, background-color 1s;
+                    }
+                }
+                @keyframes mybtn {
+                    from {
+                        opacity: 0.5;
+                        transform: scale(0);
+                    }
+                    to {
+                        opacity: 0;
+                        transform: scale(100);
+                    }
+                }
+                .hide {
+                    display: none;
+                }
+            }
+            .table {
+                .btn {
+                    margin-left: 10px;
+                }
+            }
+
+        }
+    }
+    button {
+        outline: 0;
+    }
+    .table-hover>tbody>tr:hover {
+        background-color: #595cc3;
+        transition: color 1s, background-color 1s;
+    }
+}
+.my-body > .normal {
+    .container-fluid {
+        background: white !important;
+        transition: color 1s, background-color 1s;
+        #zzl-head {
+            border-bottom: 1px solid #00a164;
+            transition: color 1s, background-color 1s;
+            .head-1 {
+                background: #00a164 !important;
+                transition: color 1s, background-color 1s;
+                .my-head {
+                    color: white !important;
+                    transition: color 1s, background-color 1s;
+                }
+            }
+            .head-2 {
+                background: white !important;
+                transition: color 1s, background-color 1s;
+            }
+            .head-3 {
+                background: white !important;
+                transition: color 1s, background-color 1s;
+            }
+        }
+        #zzl-body {
+            .same-height {
+                background: white !important;
+                transition: color 1s, background-color 1s;
+                &:nth-child(1) {
+                    border-right: 1px solid #00a164 !important;
+                    transition: color 1s, background-color 1s;
+                }
+                .pager {
+                    p {
+                        color: #1A2531 !important;
+                    }
+                }
+            }
+            .my-list-wrap {
+                background: white !important;
+                transition: color 1s, background-color 1s;
+            }
+            td {
+                color: black !important;
+                transition: color 1s, background-color 1s;
+            }
+            .table-hover>tbody>tr:hover {
+                background-color: #e7ffe2 !important;
+                transition: color 1s, background-color 1s;
+            }
+        }
+    }
+}
+.my-body >.loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #ffffff;
+     .pic {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 30px;
+        text-align: center;
+        line-height: 100px;
+    }
+    span{
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top:10px;
+        left: 10px;
+        border-radius: 50%;
+        box-shadow: 0 3px 0 #666;
+        animation: rotate 1s infinite linear;
+    }
+}
+@keyframes rotate{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+.my-body > .alert {
+    position: fixed;
+    display: none;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+}

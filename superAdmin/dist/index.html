@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>社团管理系统</title>
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../src/css/index.css">
+</head>
+<body class="my-body">
+  <section class="loading">
+      <section class="pic">
+          <span></span>
+          <b>0%</b>
+      </section>
+  </section>
+  <div class="alert alert-danger alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <p>确定删除吗？</p>
+      <p>
+        <button type="button" class="btn btn-default cancel">取消</button>
+        <button type="button" class="btn btn-danger comfirm">确定</button>
+      </p>
+    </div>
+  
+  <main id="zzl-page" class="normal">
+    <section class="container-fluid">
+      <section class="row" id="zzl-head" style="height: 84px">
+        <section class="col-xs-4 col-sm-3 col-md-3 col-lg-2 same-height head-1" style="background: #505064;">
+          <h1 class="my-head">社团管理系统</h1>
+          <!-- <a href="../../Community Admin/dist/index.html">跳转</a> -->
+        </section>
+        <section class="col-xs-3 col-sm-6 col-md-6 col-lg-8 menu same-height head-2" style="background: #17212b;">
+          <section class="menu-btn"><span class="glyphicon glyphicon-menu-hamburger"></span></section>
+          <section style="margin-top: 3px;">
+            <ol class="breadcrumb">
+              <li class="home-btn"><a href="javascript:;">首页</a></li>
+              <li class="manage-group" style="display: none"><a href="javascript:;">社团管理</a></li>
+              <li class="manage-detail" style="display: none">用户信息管理</li>
+            </ol>
+          </section>
+        </section>
+        <section class="col-xs-5  col-sm-3 col-md-3 col-lg-2 same-height head-3" style="background: #17212b;">
+          <section class="admin-img">
+            <a href="javascript:;">
+              <img src="./img/WechatIMG1.png" class="img-circle" alt="管理员头像">
+            </a>
+          </section>
+          <section class="dropdown">
+            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="true">
+              超级管理员
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li ><a href="javascript:;">退出登录</a></li>
+              </ul>
+          </section>
+        <section class="skin"><button type="button" class="btn btn-primary">日间模式</button></section>
+        </section>
+      </section>
+      <section class="row main-content" id="zzl-body">
+        <!-- 侧边栏 -->
+        <section class="col-xs-4 col-sm-3 col-md-3 col-lg-2 same-height" style="background: #1A2531;">
+          <section class="my-list-wrap side" style="height: 100vh;">
+            <section class="list-group">
+              <a href="javascript:;" class="list-group-item nav-commuity">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <span class="text">社团管理</span> 
+                <span class="glyphicon glyphicon-plus toggle" aria-hidden="true"></span>
+              </a>
+              <div class="row commuity-fold-nav" style="display: none;">
+                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2"></div>
+                <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
+                  <section class="list-group">
+                    <a href="javascript:;" class="list-group-item user-information detail">
+                      <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+                      <span class="text">用户信息管理</span>
+                    </a>
+                    <a href="javascript:;" class="list-group-item banner-manage detail">
+                      <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+                      <span class="text">轮播图管理</span> 
+                    </a>
+                  </section>
+                </div>
+              </div>
+              <a href="javascript:;" class="list-group-item nav-apply">
+                <span class="glyphicon glyphicon-check" aria-hidden="true"></span><span class="badge">27</span>
+                <span class="text">审核管理</span> 
+                <span class="glyphicon glyphicon-plus  toggle" aria-hidden="true"></span>
+              </a>
+              <div class="row banner-fold-nav" style="display: none;">
+                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2"></div>
+                <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
+                  <section class="list-group">
+                    <a href="javascript:;" class="list-group-item user-apply detail">
+                      <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+                      <span class="text">用户注册审核</span> 
+                     <span class="badge">13</span>
+                    </a>
+                    <a href="javascript:;" class="list-group-item banner-apply detail">
+                      <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+                      <span class="text">轮播图审核</span> 
+                    <span class="badge">14</span>
+                    </a>
+                  </section>
+                </div>
+              </div>
+              <a href="javascript:;" class="list-group-item nav-content">
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                <span class="text">内容管理</span> 
+                <span class="glyphicon glyphicon-plus toggle" aria-hidden="true"></span>
+              </a>
+              <div class="row content-fold-nav" style="display: none;">
+                  <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2"></div>
+                  <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
+                  </div>
+                </div>
+            </section>
+          </section>
+        </section>
+        <!-- 超级管理员首页界面 -->
+        <section class="col-xs-8 col-sm-9 col-md-9 col-lg-10 same-height manage" id="my-home">
+          <section class="row">
+            <section class="hidden-xs col-sm-2 col-md-3 col-lg-2"> </section>
+            <section class="col-xs-12 col-sm-10 col-md-9 col-lg-10 home-datas">
+              <section class="home-data">
+                <section><span class="glyphicon glyphicon-user" aria-hidden="true"></span></section>
+                <section class="total">
+                  <p>用户人数</p>
+                  <p class="user-num num">11</p>
+                </section>
+              </section>
+              <section class="home-data">
+                <section><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></section>
+                <section class="total">
+                  <p>轮播图数目</p>
+                  <p class="banner-num num">12</p>
+                </section>
+              </section>
+              <section class="home-data">
+                <section><span class="glyphicon glyphicon-check" aria-hidden="true"></span></section>
+                <section class="total">
+                  <p>待审核社团</p>
+                  <p class="user-apply-num num">13</p>
+                </section>
+              </section>
+              <section class="home-data">
+                <section><span class="glyphicon glyphicon-list" aria-hidden="true"></span></section>
+                <section class="total">
+                  <p>待审核轮播图</p>
+                  <p class="banner-apply-num num">14</p>
+                </section>
+              </section>
+            </section>
+          </section>
+          <section class="row">
+            <section class="col-xs-1 col-sm-2 col-md-3 col-lg-2"></section>
+            <section class="col-xs-11 col-sm-9 col-md-8 col-lg-8 sector" style="margin-top: 100px;">
+              <section class="row">
+                <section class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-3">
+                  <h3>
+                    <button class="btn btn-info" id="sector" data-index="1">刷新数据</button>
+                  </h3>
+                  <div id="main" style="width: 600px;height:400px;"></div>
+                </section>
+              </section>
+            </section>
+          </section>
+        </section>
+        <!-- 用户信息管理界面 -->
+        <section class="col-xs-8 col-sm-9 col-md-9 col-lg-10 same-height manage" id="user-information"
+          style="display: none">
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <label for="search-input" style="color: white;">社团名称：</label> <input type="text" id="search-input"
+                class="form-control" placeholder="请输入社团名称">
+            </div>
+            <button class="btn btn-info">查询</button>
+          </form>
+          <table class="table table-bordered table-hover table-condensed">
+            <thead>
+              <tr>
+                <td></td>
+                <td>序号</td>
+                <td>社团名称</td>
+                <td>社团管理员</td>
+                <td>学号</td>
+                <td>手机号</td>
+                <td style="display: none;">社团ID</td>
+                <td>操作</td>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+          </table>
+          <!-- <div class="checkbox check-all">
+            <label style="color: white">
+              <input type="checkbox"> 全选
+            </label>
+            <button class="btn btn-default delete-all-checked">删除</button>
+          </div> -->
+          <nav aria-label="...">
+            <ul class="pager">
+              <li class="disabled prepage"><a href="javascript:;">上一页</a></li>
+              <p style="display: inline;color: white;"><span class="current-page">1</span>/<span class="all-page">5</span></p>
+              <li class="nextpage"><a href="javascript:;">下一页</a></li>
+            </ul>
+          </nav>
+        </section>
+        <!-- 轮播图信息管理界面 -->
+        <section class="col-xs-8 col-sm-9 col-md-9 col-lg-10 same-height manage" id="banner-manage"
+          style="display: none">
+          <section class="img-zoom">
+            <section class="img-zoom-wrap">
+            </section>
+            <section style="overflow: hidden;padding-right: 50%;">
+              <button type="button" class="close close-preview" aria-label="Close"><span aria-hidden="true"
+                  style="font-size: 48px; background: white;">&times;</span></button>
+            </section>
+          </section>
+          <div class="page-header">
+              <h1>正在展示的轮播图信息</h1>
+				     	<div class="mybtn add">添加</div>
+            </div>
+            <table class="table table-bordered table-hover table-condensed">
+              <thead>
+                <tr>
+                  <td>序号</td>
+                  <td>社团名称</td>
+                  <td>社团管理员</td>
+                  <!-- <td>学号</td> -->
+                  <td style="display: none;">轮播图ID</td>
+                  <td style="display: none;">社团ID</td>
+                  <td>展示中</td>
+                  <td>操作</td>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+              <tfoot>
+              </tfoot>
+            </table>
+          <section class="img-container" id="skip">
+            <div class="row" style="padding-right: 22px;">
+              <div class="col-sm-8 col-md-8">
+                <h2 style="margin-left: 20px;"><small>审核通过的轮播图片</small></h2>
+              </div>
+              <div class="col-sm-4 col-md-4" style="margin-top: 20px;">
+                <button type="button" class="close close-img-container" aria-label="Close"><span aria-hidden="true"
+                    style="font-size: 34px;  color: brown;">&times;</span></button>
+              </div>
+            </div>
+            <div class="container">         
+            </div>
+          </section>
+        </section>
+        <!-- 审核社团管理员注册管理界面 -->
+        <section class="col-xs-8 col-sm-9 col-md-9 col-lg-10 same-height manage" id="user-apply" style="display: none;">
+          <table class="table table-bordered table-hover table-condensed">
+            <thead>
+              <tr>
+                <td></td>
+                <td>序号</td>
+                <td>社团名称</td>
+                <td>社团管理员</td>
+                <td>学号</td>
+                <td>手机号</td>
+                <td style="display: none;">社团ID</td>
+                <td>社团展示图片</td>
+                <td>操作</td>
+
+
+              </tr>
+            </thead>
+            <tbody>              
+            </tbody> 
+            <tfoot>
+            </tfoot>
+          </table>
+          <!-- <div class="checkbox check-all">
+            <label style="color: white">
+              <input type="checkbox"> 全选
+            </label>
+            <button class="btn btn-success pass-all-checked">通过</button>
+            <button class="btn btn-danger delete-all-checked">删除</button>
+          </div> -->
+          <nav aria-label="...">
+            <ul class="pager">
+                <li class="disabled prepage"><a href="javascript:;">上一页</a></li>
+                <p style="display: inline;color: white;"><span class="current-page">1</span>/<span class="all-page">5</span></p>
+                <li class="nextpage"><a href="javascript:;">下一页</a></li>
+            </ul>
+          </nav>
+        </section>
+        <!-- 轮播图审核管理界面 -->
+        <section class="col-xs-8 col-sm-9 col-md-9 col-lg-10 same-height manage" id="banner-apply"
+          style="display: none;">
+          <section class="img-zoom" style="position: fixed;z-index: 1; display: none;">
+            <section class="img-zoom-wrap">
+            </section>
+            <section style="overflow: hidden;padding-right: 50%;">
+              <button type="button" class="close close-preview" aria-label="Close"><span aria-hidden="true"
+                  style="font-size: 48px; color: red">&times;</span></button>
+            </section>
+          </section>
+          <table class="table table-bordered table-hover table-condensed">
+            <thead>
+              <tr>
+                <td></td>
+                <td>序号</td>
+                <td>社团名称</td>
+                <td>社团管理员</td>
+                <td style="display: none;">轮播图Id</td>
+                <!-- <td>手机号</td> -->
+                <td style="display: none;">社团ID</td>
+                <td>申请图片</td>
+                <td>操作</td>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+          </table>
+          <!-- <div class="checkbox check-all" style="color: white">
+            <label>
+              <input type="checkbox"> 全选
+            </label>
+            <button class="btn btn-success pass-all-checked">通过</button>
+            <button class="btn btn-danger delete-all-checked">删除</button>
+          </div> -->
+          <nav aria-label="...">
+            <ul class="pager">
+                <li class="disabled prepage"><a href="javascript:;">上一页</a></li>
+                <p style="display: inline;color: white;"><span class="current-page">1</span>/<span class="all-page">5</span></p>
+                <li class="nextpage"><a href="javascript:;">下一页</a></li>
+            </ul>
+          </nav>
+        </section>
+      </section>
+    </section>
+  </main>
+<script src="./js/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+.my-body > #zzl-page {
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid {
+  background: linear-gradient(45deg, #69667d, #938693, #4d4365);
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-head .my-head {
+  color: #449D88;
+  font-size: 20px;
+  margin-top: 31px;
+}
+.my-body > #zzl-page .container-fluid #zzl-head .menu {
+  font-size: 26px;
+  padding-top: 15px;
+}
+.my-body > #zzl-page .container-fluid #zzl-head .menu .menu-btn {
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.my-body > #zzl-page .container-fluid #zzl-head .menu .breadcrumb li {
+  font-size: 16px;
+}
+.my-body > #zzl-page .container-fluid #zzl-head .admin-img img {
+  width: 15%;
+  float: left;
+  padding-top: 13px;
+  padding-bottom: 8px;
+}
+.my-body > #zzl-page .container-fluid #zzl-head .dropdown {
+  float: left;
+  padding-top: 12px;
+  padding-left: 2px;
+}
+.my-body > #zzl-page .container-fluid #zzl-head .dropdown .btn {
+  border: none;
+  font-size: 16px;
+}
+.my-body > #zzl-page .container-fluid #zzl-head .skin {
+  margin: 10px 6px;
+  float: right;
+}
+.my-body > #zzl-page .container-fluid #zzl-head .skin .btn {
+  padding: 6px 1px;
+}
+.my-body > #zzl-page .container-fluid #zzl-head .breadcrumb {
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
+  background-color: transparent;
+  border-radius: 4px;
+}
+.my-body > #zzl-page .container-fluid #zzl-head.row [class*="same-height"] {
+  margin-bottom: -899px;
+  padding-bottom: 899px;
+}
+.my-body > #zzl-page .container-fluid #zzl-head.row {
+  overflow: hidden;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .manage {
+  background: linear-gradient(45deg, #69667d, #938693, #4d4365);
+  transition: color 1s, background-color 1s;
+  scroll-behavior: smooth;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .manage .check-all label {
+  margin-left: 24px;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .my-list-wrap {
+  background: #1A2531;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .my-list-wrap a {
+  border: none;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .my-list-wrap .list-group .list-group-item {
+  background: transparent;
+  color: #787575;
+  padding: 10px 10px 10px 12px;
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .my-list-wrap .list-group .list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .my-list-wrap .list-group .list-group-item .badge {
+  position: relative;
+  background: rgba(225, 0, 0, 0.7);
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .my-list-wrap .list-group .list-group-item.active {
+  color: white;
+  background: #449D88;
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .my-list-wrap .list-group .list-group-item.active .glyphicon {
+  color: white;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .my-list-wrap .list-group .list-group-item.active .badge {
+  display: none;
+}
+.my-body > #zzl-page .container-fluid #zzl-body.row [class*="same-height"] {
+  margin-bottom: -2899px;
+  padding-bottom: 2899px;
+}
+.my-body > #zzl-page .container-fluid #zzl-body.row {
+  overflow: hidden;
+}
+.my-body > #zzl-page .container-fluid #zzl-body td {
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home {
+  background: linear-gradient(45deg, #69667d, #938693, #4d4365);
+  transition: color 1s, background-color 1s;
+  background-size: cover;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .home-datas {
+  margin-top: 100px;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .home-datas .home-data {
+  position: relative;
+  float: left;
+  width: 11.2vw;
+  height: 100px;
+  background: #449D88;
+  margin: 0 1.2vw;
+  color: white;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 5px 5px;
+  box-shadow: #1A2531 0 0 2px;
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .home-datas .home-data:nth-child(1) {
+  background: #449D88;
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .home-datas .home-data:nth-child(2) {
+  background: #406cb8;
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .home-datas .home-data:nth-child(3) {
+  background: #c0444c;
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .home-datas .home-data:nth-child(4) {
+  background: #4c4c4c;
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .home-datas .home-data:hover {
+  box-shadow: #1A2531 1px 1px 5px;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .home-datas .home-data .total {
+  margin: 20px 0 0 45px;
+  font-size: 16px;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .home-datas .home-data .total p {
+  text-align: center;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .home-datas .home-data .glyphicon {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  font-size: 32px;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #my-home .sector {
+  background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565434857944&di=930881eb5496c19ed0cfdb427ed71e9c&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F03871d8582407ada84a0d304f71746f.jpg);
+  transition: color 1s, background-color 1s;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #banner-manage .img-zoom {
+  position: fixed;
+  z-index: 6;
+  display: none;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #banner-manage .img-container {
+  position: absolute;
+  width: 80vw;
+  background: #cecbcb;
+  top: 1vh;
+  left: 1vw;
+  z-index: 1;
+  height: 800px;
+  display: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #banner-manage .img-container .close-img-container {
+  opacity: .8;
+  z-index: 2;
+  position: absolute;
+  right: 3vw;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #banner-manage .mybtn {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: radial-gradient(#5ac0de, #7b7083);
+  color: white;
+  font-size: 16px;
+  position: relative;
+  float: right;
+  text-align: center;
+  overflow: hidden;
+  margin: 20px 170px 10px 0;
+  border-radius: 50% 50%;
+  cursor: pointer;
+  transition: color 1s, background-color 1s;
+}
+.my-body > #zzl-page .container-fluid #zzl-body #banner-manage .mybtn .box {
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(red, black);
+  position: absolute;
+  border-radius: 50%;
+  animation: mybtn 1s;
+  opacity: 0;
+  transform: scale(100);
+  transition: color 1s, background-color 1s;
+}
+@keyframes mybtn {
+  from {
+    opacity: 0.5;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(100);
+  }
+}
+.my-body > #zzl-page .container-fluid #zzl-body #banner-manage .hide {
+  display: none;
+}
+.my-body > #zzl-page .container-fluid #zzl-body .table .btn {
+  margin-left: 10px;
+}
+.my-body > #zzl-page button {
+  outline: 0;
+}
+.my-body > #zzl-page .table-hover > tbody > tr:hover {
+  background-color: #595cc3;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid {
+  background: white !important;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid #zzl-head {
+  border-bottom: 1px solid #00a164;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid #zzl-head .head-1 {
+  background: #00a164 !important;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid #zzl-head .head-1 .my-head {
+  color: white !important;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid #zzl-head .head-2 {
+  background: white !important;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid #zzl-head .head-3 {
+  background: white !important;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid #zzl-body .same-height {
+  background: white !important;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid #zzl-body .same-height:nth-child(1) {
+  border-right: 1px solid #00a164 !important;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid #zzl-body .same-height .pager p {
+  color: #1A2531 !important;
+}
+.my-body > .normal .container-fluid #zzl-body .my-list-wrap {
+  background: white !important;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid #zzl-body td {
+  color: black !important;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .normal .container-fluid #zzl-body .table-hover > tbody > tr:hover {
+  background-color: #e7ffe2 !important;
+  transition: color 1s, background-color 1s;
+}
+.my-body > .loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #ffffff;
+}
+.my-body > .loading .pic {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 30px;
+  text-align: center;
+  line-height: 100px;
+}
+.my-body > .loading span {
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  box-shadow: 0 3px 0 #666;
+  animation: rotate 1s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.my-body > .alert {
+  position: fixed;
+  display: none;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+}
