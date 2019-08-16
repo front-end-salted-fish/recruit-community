@@ -1,7 +1,8 @@
 import $ from 'jquery';
-import handleData from './handleData';
+// import handleData from './handleData';
 import '../../bootstrap-3.3.7-dist/css/bootstrap.min.css';
 import {$comfirmFrame} from './comfirm';
+import {allUrl, handleData, springNum} from "./handleData"
 // 加载动画
 document.onreadystatechange=function(){
     if(document.readyState=="complete"){
@@ -29,17 +30,17 @@ $(function () {
     const $skinBtn = $('.skin .btn'); // 获取换肤按钮
     const $pageBtns = $('.home-data'); // 获取主页的四个按钮
     const domainName= "http://10.21.23.177:8080/";
-    const allUrl = {
-        changeCommunityStatusUrl: domainName + 'superAdmin/changeCommunityStatus',
-        bannerItemsUrl: domainName + 'superAdmin/bannerItems',
-        deleteBanner: domainName + 'superAdmin/deleteBanner',
-        changeBannerStatus: domainName + 'superAdmin/changeBannerStatus',
-        replaceDisplayBanner: domainName + 'superAdmin/replaceDisplayBanner',
-        obtainDesignatedItem: domainName + 'superAdmin/obtainDesignatedItem',
-        getBannerNum: domainName + 'superAdmin/getBannerNum',
-        deleteCommunity: domainName + 'superAdmin/deleteCommunity',
-        getAllCommunityNum: domainName + 'superAdmin/getAllCommunityNum',
-    };
+    // const allUrl = {
+    //     changeCommunityStatusUrl: domainName + 'superAdmin/changeCommunityStatus',
+    //     bannerItemsUrl: domainName + 'superAdmin/bannerItems',
+    //     deleteBanner: domainName + 'superAdmin/deleteBanner',
+    //     changeBannerStatus: domainName + 'superAdmin/changeBannerStatus',
+    //     replaceDisplayBanner: domainName + 'superAdmin/replaceDisplayBanner',
+    //     obtainDesignatedItem: domainName + 'superAdmin/obtainDesignatedItem',
+    //     getBannerNum: domainName + 'superAdmin/getBannerNum',
+    //     deleteCommunity: domainName + 'superAdmin/deleteCommunity',
+    //     getAllCommunityNum: domainName + 'superAdmin/getAllCommunityNum',
+    // };
     (() => {
         let $img = $("img");
         let num = 0;
@@ -256,7 +257,6 @@ $(function () {
             if (flag) {
                 handleNextPage($(this), $allPage.html(), $tbody, $currentPage, url, status, $allPage);
             } else {
-                console.log(1)
                 handleSearchNextPage($(this), $allPage.html(),$tbody,$currentPage, url, status, $allPage, searchName);
             }
         });
@@ -302,11 +302,11 @@ $(function () {
         // 获取处理数据对象中的函数
         const {
             showTempBannerWindow,
-            bannerControl,
             initBannerManagePage,
             customBtn,
             handleComfirm,
-            comfirmBannerControl
+            comfirmBannerControl,
+            getAllBannnerPageNum
         } = handleData;
         // 定义一个用来保存当前点击的正在展示的那一张轮播图的列表的元素的变量
         let $current;
@@ -316,6 +316,8 @@ $(function () {
         // 初始化数据
         let url;
         let data = {};
+        let page = 1;
+        let $temp = null;
         $bannerManage.on('click', function () {
             url = allUrl.bannerItemsUrl;
             data = {
@@ -323,6 +325,8 @@ $(function () {
                 status: 3
             };
             initBannerManagePage(url, $tbody, data);
+            getAllBannnerPageNum(allUrl.getBannerNum, {status: 1});
+            $('.close-img-container').trigger('click')
         })
         // 替换按钮，事件委托，点击跳出替换窗口,此时需要发送请求，得到审核完成的轮播图数据
         $bannerManagePage.on('click', '.replace', function () {
@@ -332,7 +336,8 @@ $(function () {
                 status:1
             };
             $container.html("");
-            $current = showTempBannerWindow($(this), url, data,$tempImgContainer, $container, $current);
+            $current = showTempBannerWindow($(this), url, data, $tempImgContainer, $container, $current);
+            $temp = $(this);
         });
         // 确定替换按钮，事件委托，需要发送数据给后台，告诉它们我替换的是哪一张
         $bannerManagePage.on('click', '.comfirm-replace', function () {
@@ -344,6 +349,7 @@ $(function () {
         // 关闭按钮
         $('.close-img-container').click(function () {
             $tempImgContainer.fadeOut();
+            $container.html("");
         })
         // 删除按钮，事件委托
         $bannerManagePage.on('click', '.delete-showing', function () {
@@ -370,6 +376,7 @@ $(function () {
                 $container.html("");
                 $current = showTempBannerWindow($(this), url, data, $tempImgContainer, $container, $current);
             }
+            $temp = $(this);
         });
         // 确定添加按钮 事件委托
         $bannerManagePage.on('click', '.comfirm-add', function () {
@@ -388,6 +395,19 @@ $(function () {
             e = e || window.event;
             customBtn(e, $(this));
         });
+        // 瀑布流
+        $tempImgContainer.on("scroll", function() {
+            url = allUrl.bannerItemsUrl;
+            if (page < springNum) {
+                page++;
+                data = {
+                    page,
+                    status:1
+                };
+                showTempBannerWindow($temp, url, data, $tempImgContainer, $container, $current);
+            }
+           
+        })
     })();
     // 用户注册审核界面
     (() => {
@@ -564,7 +584,7 @@ $(function () {
                 bannerId,
                 status: 1
             };
-            handleComfirm($(this), $bannerApply, url, data, $tbody, page, status, $allPage)
+            handleComfirm($(this), $bannerApplyPage, url, data, $tbody, page, status, $allPage)
         });
         // 3. 点击删除单个项目的按钮，发送请求修改状态，将其从后台服务器中删除，最后再把对应的项目删除
         // 点击删除单个的按钮，删除单个元素，事件委托

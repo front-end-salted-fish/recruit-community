@@ -18,6 +18,7 @@ let bannerApplyPageIndex = 0;
 const Authorization = localStorage.getItem('Authorization');
 const superAdminId = localStorage.getItem('superAdminId');
 const domainName= "http://10.21.23.177:8080/";
+let springNum = 1;
 const allUrl = {
     changeCommunityStatusUrl: domainName + 'superAdmin/changeCommunityStatus',
     bannerItemsUrl: domainName + 'superAdmin/bannerItems',
@@ -242,8 +243,6 @@ const handleData = {
     },
     // 生成用户管理界面初始化数据
     initUserInformation: ($tbody, url, data, status, $allPage, searchName) => {
-        console.log(data)
-        console.log(url)
         $.ajax({
             type: 'get',
             url,
@@ -268,7 +267,7 @@ const handleData = {
                         '<td class="admin-name">' + item.adminName + '</td>' +
                         '<td class="student-number">' + item.adminStudentNumber + '</td>' +
                         '<td class="student-phone">' + item.adminStudentPhone + '</td>' +
-                        '<td class="community-id hide">' + item.communityId + '</td>' +
+                        '<td class="community-id" style="display:none;">' + item.communityId + '</td>' +
                         '<td><button type="button" class="btn btn-danger ">删除</button></td>' +
                         '</tr>';
                     $tbody.append($item);
@@ -377,6 +376,7 @@ const handleData = {
             data,
             headers: {Authorization},
             success: function (result) {
+                console.log(result)
                 $tbody.html("");
                 $(result.object).each((key, item) => {
                     let $item = '<tr class="auditing">' +
@@ -408,6 +408,7 @@ const handleData = {
                 let data = {
                     status
                 };
+                console.log(data)
                 handleData.getAllBannnerPageNum(url, data, $allPage);
             },
             error: function (errorMsg) {
@@ -637,7 +638,9 @@ const handleData = {
         $comfirmBtn.one('click',  () => {
            $comfirmFrame.hide();
            handleData.deleteOneItem($obj, $delegate,url, data, $tbody, page, status, $allPage);
-           $allPage.siblings().html(page)
+           if ($allPage) {
+            $allPage.siblings().html(page);
+           }
         });
    },
    // 确认多个删除
@@ -712,6 +715,7 @@ const handleData = {
             data,
             headers:{Authorization},
             success: function (result) {
+                console.log(result)
                 $(result.object).each((key, item) => {
                     let $item = '<div class="col-sm-6 col-md-4 temp">' +
                         '<div class="thumbnail">' +
@@ -728,12 +732,13 @@ const handleData = {
                         '</div>';
                     $rightContainer.append($item);
                 });
-                if ($obj.hasClass('replace')) {
-                    $('.comfirm-add').hide();
-                    $('.comfirm-replace').show();
-                } else {
+                console.log($currentItem)
+                if ($obj.hasClass('add')) {
                     $('.comfirm-add').show();
                     $('.comfirm-replace').hide();
+                } else {
+                    $('.comfirm-add').hide();
+                    $('.comfirm-replace').show();
                 }
             },
             error: function (errorMsg) {
@@ -860,21 +865,27 @@ const handleData = {
     },
     // 获取不同状态的轮播图数量，同时进行分页
     getAllBannnerPageNum: (url, data, $allPage) => {
-        let bannerNum;
-        $.ajax({
-            type: "get",
-            url,
-            data,
-            headers: {Authorization},
-            success: function (response) {
-                bannerNum = response.object.bannerNum
-                if (bannerNum <= 0) {
-                    bannerNum = 1;
+            $.ajax({
+                type: "get",
+                url,
+                data,
+                headers: {Authorization},
+                success: function (response) {
+                    console.log(response)
+                    let bannerNum = response.object.bannerNum
+                    if (bannerNum <= 0) {
+                        bannerNum = 1;
+                    }
+                    bannerNum = Math.ceil(bannerNum / 15);
+                    if ($allPage) {
+                        $allPage.html(bannerNum)
+                    } else {
+                        springNum = Math.ceil(response.object.bannerNum / 15);
+                    }
+                    
                 }
-                bannerNum = Math.ceil(bannerNum / 10);
-                $allPage.html(bannerNum)
-            }
-        });
+            });
+        
     },
     // 用户信息管理模糊搜索
     serach: (searchName,url,$tbody,$allPage) => {
@@ -906,7 +917,7 @@ const handleData = {
                             '<td class="admin-name">' + item.adminName + '</td>' +
                             '<td class="student-number">' + item.adminStudentNumber + '</td>' +
                             '<td class="student-phone">' + item.adminStudentPhone + '</td>' +
-                            '<td class="community-id">' + item.communityId + '</td>' +
+                            '<td class="community-id" style="display:none;">' + item.communityId + '</td>' +
                             '<td><button type="button" class="btn btn-danger ">删除</button></td>' +
                             '</tr>';
                         $tbody.append($item);
@@ -1066,4 +1077,6 @@ const handleData = {
         }
     },
 };
-export default handleData;
+export {handleData};
+export {allUrl};
+export {springNum};
