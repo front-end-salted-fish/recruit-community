@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 引入jQuery -->
+  <!-- <script src="../src/js/jquery-1.12.4.js"></script> -->
+  <!-- 引入bootstrap -->
+  <!-- <link rel="stylesheet" href="../src/bootstrap-3.3.7/dist/js/bootstrap.js"> -->
+  <!-- <link rel="stylesheet" href="../src/bootstrap-3.3.7/dist/css/bootstrap.css"> -->
+  <!-- 引入自己的css -->
+  <link rel="stylesheet" href="../src/css/index.css">
+  <!-- 引入icon文件 -->
+  <link rel="stylesheet" href="../src/font/iconfont/iconfont.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row" id="header">
+      <!-- 页面标题 -->
+      <div class="headline col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <h1 class="text-center">
+          部门管理员系统
+        </h1>
+      </div>
+      <!-- 部门名字 -->
+      <div
+        class="deparment-name col-xs-10 col-sm-10 col-md-10 col-lg-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 text-center">
+        <span id="comunity-name"></span>|<span id="department-name"></span>
+      </div>
+    </div>
+    <div id="main-box" class="row">
+      <!-- 侧栏 -->
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="aside-nav">
+        <div class="row logo text-center">
+          <img src="../images/administrator.png" alt="">
+        </div>
+        <div class="row account-management text-center">
+          <div class="account-btn">
+            <i class="iconfont icon-xiayiye"></i>
+            <span>账号管理</span>
+          </div>
+          <!-- 查看简介-->
+          <ul class="account-menu">
+            <li class="brief-introduction">
+              <i class="iconfont icon-chakan"></i>
+              <span>查看部门简介</span>
+            </li>
+            <li class="edit-password">
+              <i class="iconfont icon-xiugaimima"></i>
+              <span>修改密码</span>
+            </li>
+            <li class="qiut-log">
+              <i class="iconfont icon-tuichu" style="font-size: 18px;"></i>
+              <span>退出登录</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 表格 -->
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1"
+        id="table-box">
+        <!-- 搜索框 -->
+        <div class="search">
+          <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+            <input class="search-input form-control" placeholder="输入姓名搜索学生"></input>
+            <i class="iconfont icon-sousuo" id="glass"></i>
+          </div>
+          <button class="btn btn-success new-step">
+            <i class="iconfont icon-jiahao"></i>
+            发起新一轮笔试(面试)
+          </button>
+          <button class="btn btn-danger quit-search">取消搜索</button>
+          <ul class="classify">
+            <li>阶段分类:</li>
+          </ul>
+        </div>
+        <!-- 表格 -->
+        <table class="table table-bordered">
+          <thead>
+            <td>序号</td>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>手机号</td>
+            <td>学院</td>
+            <td>专业班级</td>
+            <td>宿舍</td>
+            <td>操作</td>
+          </thead>
+          <tbody class="table-body">
+          </tbody>
+        </table>
+        <!-- 加载动画 -->
+        <!-- <div class="login-animate text-center">
+          <div class="loading"></div>
+          <h1>加载中</h1>
+        </div> -->
+        <!-- 分页按钮 -->
+        <div class="paging text-center">
+          <!-- <span class="fl col-xs-1 col-sm-1 col-md-1 col-lg-1"><i class="iconfont icon-shangyiye last-page"></i></span> -->
+          <ul class="clearfix text-center ">
+          </ul>
+          <!-- <span class="fl col-xs-1 col-sm-1 col-md-1 col-lg-1"><i class="iconfont icon-xiayiye next-page"></i></span> -->
+        </div>
+      </div>
+      <!-- 添加列表按钮 -->
+      <div id="add-nav"
+        class=" col-xs-2 col-sm-2 col-md-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+        <h1 class="text-center">预添加列表</h1>
+        <table class="table table-hover text-center">
+          <thead>
+            <tr>
+              <td>姓名</td>
+              <td>学号</td>
+              <td>操作</td>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        <div class="text-center">
+          <button class="btn btn-success affirm">确认</button>
+          <button class="btn quit">取消</button>
+        </div>
+      </div>
+    </div>
+    <!-- 部门详情页 -->
+    <div id="brief-introduction-box">
+      <h1 class="text-center drap-area">部门简介</h1>
+      <hr>
+      <p class="text-center content-box">
+      </p>
+      <p class="tips">超过150字啦</p>
+      <button class="btn text-center modification">编辑</button>
+      <i class="close iconfont icon-guanbi "></i>
+    </div>
+    <!-- 修改密码页面 -->
+    <div id="change-password-page">
+      <div id="change-password"
+        class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-5 col-sm-offset-5 col-md-offset-5 col-lg-offset-5">
+        <div class="row text-center">
+          <label for="password">
+            <span>旧密码</span>
+            <input id="old-password" class="form-control" type="password" class="old-password" placeholder="请输入旧密码">
+          </label>
+        </div>
+        <div class="row text-center">
+          <label for="new-password">
+            <span>新密码</span>
+            <input id="new-password" class="form-control" type="password" class="new-password" placeholder="请输入新密码">
+          </label>
+        </div>
+        <div class="row text-center">
+          <label for="new-password">
+            <span>确认新密码</span>
+            <input id="renew-password" class="form-control" type="password" class="a-new-password" placeholder="再次输入新密码">
+          </label>
+        </div>
+        <p class="tips">请正确的密码</p>
+        <div class="row text-center btn-box">
+          <button class="btn btn-info affirm">确认修改</button>
+          <button class="btn quit">取消修改</button>
+        </div>
+      </div>
+    </div>
+    <div id="opera-tip">操作成功</div>
+    <div class="loading-animate" >
+				<div class="container">
+						<div class="row">
+								<div class="col-md-12">
+										<div class="loader">
+												<div class="loading-1"></div>
+												<div class="loading-2">Loading...</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+<script src="../lib/jquery-1.12.4.min.js"></script>
+<script src="./js/bundle.js"></script>
+</body>
+</html>
